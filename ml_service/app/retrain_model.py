@@ -117,7 +117,7 @@ def retrain_from_feedback(data_path):
             val_loss = sum(criterion(model(b['text'], b['struct']), b['label']).item()
                            for b in val_loader) / len(val_loader)
 
-        print("Epoch {epoch+1} - Val Loss: {val_loss:.4f}")
+        print(f"Epoch {epoch+1} - Val Loss: {val_loss:.4f}")
         early_stopping(val_loss, model)
         if early_stopping.early_stop:
             model.load_state_dict(early_stopping.best_model_state)
