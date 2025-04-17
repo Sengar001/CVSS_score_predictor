@@ -1,0 +1,127 @@
+2025-04-14 18:22:12,453 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-14 18:22:12,453 | INFO | [33mPress CTRL+C to quit[0m
+2025-04-14 18:22:12,454 | INFO |  * Restarting with stat
+2025-04-14 18:22:12,685 | WARNING |  * Debugger is active!
+2025-04-14 18:22:12,771 | INFO |  * Debugger PIN: 663-539-067
+2025-04-14 18:23:36,397 | INFO | Calling predict with payload: {'summary': 'ProFTPD before 1.3.6b and 1.3.7rc before 1.3.7rc2 allows remote unauthenticated denial-of-service due to incorrect handling of overly long commands because main.c in a child process enters an infinite loop.', 'access_complexity': 0, 'impact_availability': 2, 'impact_confidentiality': 0, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-14 18:23:36,429 | ERROR | Error in predict: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /predict (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x736c12cadcd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-14 18:23:36,431 | INFO | 127.0.0.1 - - [14/Apr/2025 18:23:36] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-14 18:25:18,783 | INFO | Calling predict with payload: {'summary': 'ProFTPD before 1.3.6b and 1.3.7rc before 1.3.7rc2 allows remote unauthenticated denial-of-service due to incorrect handling of overly long commands because main.c in a child process enters an infinite loop.', 'access_complexity': 0, 'impact_availability': 2, 'impact_confidentiality': 0, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-14 18:25:18,799 | INFO | Response from predict: {'cvss_score': 7.65}
+2025-04-14 18:25:18,800 | INFO | 127.0.0.1 - - [14/Apr/2025 18:25:18] "POST /api/predict HTTP/1.1" 200 -
+2025-04-14 18:26:46,800 | INFO | Calling feedback with payload: {'summary': 'ProFTPD before 1.3.6b and 1.3.7rc before 1.3.7rc2 allows remote unauthenticated denial-of-service due to incorrect handling of overly long commands because main.c in a child process enters an infinite loop.', 'access_complexity': 0, 'impact_availability': 2, 'impact_confidentiality': 0, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-14 18:26:46,808 | INFO | Response from feedback: {'current_count': 1, 'status': 'Feedback stored'}
+2025-04-14 18:26:46,808 | INFO | 127.0.0.1 - - [14/Apr/2025 18:26:46] "POST /api/feedback HTTP/1.1" 200 -
+2025-04-14 22:57:28,877 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-14 22:57:28,878 | INFO | [33mPress CTRL+C to quit[0m
+2025-04-14 22:57:28,878 | INFO |  * Restarting with stat
+2025-04-14 22:57:28,995 | WARNING |  * Debugger is active!
+2025-04-14 22:57:29,053 | INFO |  * Debugger PIN: 128-233-758
+2025-04-14 22:58:02,864 | INFO | 127.0.0.1 - - [14/Apr/2025 22:58:02] "[33mPOST /api/fpredict HTTP/1.1[0m" 404 -
+2025-04-14 22:58:17,772 | INFO | Calling predict with payload: {'summary': 'ProFTPD before 1.3.6b and 1.3.7rc before 1.3.7rc2 allows remote unauthenticated denial-of-service due to incorrect handling of overly long commands because main.c in a child process enters an infinite loop.', 'access_complexity': 0, 'impact_availability': 2, 'impact_confidentiality': 0, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-14 22:58:17,804 | INFO | Response from predict: {'cvss_score': 7.65}
+2025-04-14 22:58:17,805 | INFO | 127.0.0.1 - - [14/Apr/2025 22:58:17] "POST /api/predict HTTP/1.1" 200 -
+2025-04-14 22:59:30,366 | INFO | 127.0.0.1 - - [14/Apr/2025 22:59:30] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 22:59:32,955 | INFO | 127.0.0.1 - - [14/Apr/2025 22:59:32] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:05:59,342 | INFO | 127.0.0.1 - - [14/Apr/2025 23:05:59] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:12:52,392 | INFO | 127.0.0.1 - - [14/Apr/2025 23:12:52] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:12:54,321 | INFO | 127.0.0.1 - - [14/Apr/2025 23:12:54] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:12:55,304 | INFO | 127.0.0.1 - - [14/Apr/2025 23:12:55] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:13:10,119 | INFO | 127.0.0.1 - - [14/Apr/2025 23:13:10] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:13:11,015 | INFO | 127.0.0.1 - - [14/Apr/2025 23:13:11] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:13:11,306 | INFO | 127.0.0.1 - - [14/Apr/2025 23:13:11] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:13:11,646 | INFO | 127.0.0.1 - - [14/Apr/2025 23:13:11] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:16:25,845 | INFO |  * Detected change in '/home/abhishek-singh-sengar/Downloads/test2/backend/app.py', reloading
+2025-04-14 23:16:25,877 | INFO |  * Restarting with stat
+2025-04-14 23:17:18,088 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-14 23:17:18,088 | INFO | [33mPress CTRL+C to quit[0m
+2025-04-14 23:17:18,089 | INFO |  * Restarting with stat
+2025-04-14 23:17:18,206 | WARNING |  * Debugger is active!
+2025-04-14 23:17:18,211 | INFO |  * Debugger PIN: 128-233-758
+2025-04-14 23:17:28,366 | INFO | 127.0.0.1 - - [14/Apr/2025 23:17:28] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-14 23:17:28,367 | INFO | Calling predict with payload: {'summary': 'ProFTPD before 1.3.6b and 1.3.7rc before 1.3.7rc2 allows remote unauthenticated denial-of-service due to incorrect handling of overly long commands because main.c in a child process enters an infinite loop.', 'access_complexity': 2, 'impact_availability': 1, 'impact_confidentiality': 2, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 1, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 0, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 0, 'access_authentication_SINGLE': 1}
+2025-04-14 23:17:28,375 | INFO | Response from predict: {'cvss_score': 3.23}
+2025-04-14 23:17:28,376 | INFO | 127.0.0.1 - - [14/Apr/2025 23:17:28] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:09:02,475 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 0, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:09:02,538 | INFO | Response from predict: {'cvss_score': 7.68}
+2025-04-15 00:09:02,539 | INFO | 127.0.0.1 - - [15/Apr/2025 00:09:02] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:33,562 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:33] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:33,565 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:11:33,600 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:11:33,601 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:33] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:36,628 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:11:36,771 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:11:36,774 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:36] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:37,989 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:11:38,107 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:11:38,108 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:38] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:52,154 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:52] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:11:52,158 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:11:52,168 | INFO | Response from predict: {'cvss_score': 3.41}
+2025-04-15 00:11:52,169 | INFO | 127.0.0.1 - - [15/Apr/2025 00:11:52] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:30:52,734 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 0, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:30:52,743 | INFO | Response from predict: {'cvss_score': 7.68}
+2025-04-15 00:30:52,744 | INFO | 127.0.0.1 - - [15/Apr/2025 00:30:52] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:31:53,720 | INFO | 127.0.0.1 - - [15/Apr/2025 00:31:53] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:31:53,724 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:31:53,734 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:31:53,735 | INFO | 127.0.0.1 - - [15/Apr/2025 00:31:53] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:31:57,467 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:31:57,481 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:31:57,482 | INFO | 127.0.0.1 - - [15/Apr/2025 00:31:57] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:32:23,273 | INFO | 127.0.0.1 - - [15/Apr/2025 00:32:23] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:32:23,277 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:32:23,290 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:32:23,291 | INFO | 127.0.0.1 - - [15/Apr/2025 00:32:23] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:32:33,884 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 0, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:32:33,892 | INFO | Response from predict: {'cvss_score': 7.68}
+2025-04-15 00:32:33,893 | INFO | 127.0.0.1 - - [15/Apr/2025 00:32:33] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:37:00,094 | INFO | 127.0.0.1 - - [15/Apr/2025 00:37:00] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:37:00,101 | INFO | Calling predict with payload: {'summary': 'nghdhfgh', 'access_complexity': 1, 'impact_availability': 1, 'impact_confidentiality': 1, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:37:00,131 | INFO | Response from predict: {'cvss_score': 6.48}
+2025-04-15 00:37:00,131 | INFO | 127.0.0.1 - - [15/Apr/2025 00:37:00] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:38:39,186 | INFO | 127.0.0.1 - - [15/Apr/2025 00:38:39] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:38:39,189 | INFO | Calling predict with payload: {'summary': 'In createProjectionMapForQuery of TvProvider.java, there is possible SQL injection. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-135269669', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:38:39,199 | INFO | Response from predict: {'cvss_score': 2.77}
+2025-04-15 00:38:39,200 | INFO | 127.0.0.1 - - [15/Apr/2025 00:38:39] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:48:12,349 | INFO | 127.0.0.1 - - [15/Apr/2025 00:48:12] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:48:12,354 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 0, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:48:12,363 | INFO | Response from predict: {'cvss_score': 7.68}
+2025-04-15 00:48:12,364 | INFO | 127.0.0.1 - - [15/Apr/2025 00:48:12] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:49:23,856 | INFO | 127.0.0.1 - - [15/Apr/2025 00:49:23] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:49:23,861 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:49:23,872 | INFO | Response from predict: {'cvss_score': 6.59}
+2025-04-15 00:49:23,874 | INFO | 127.0.0.1 - - [15/Apr/2025 00:49:23] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:49:27,518 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:49:27,527 | INFO | Response from predict: {'cvss_score': 6.59}
+2025-04-15 00:49:27,528 | INFO | 127.0.0.1 - - [15/Apr/2025 00:49:27] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:49:56,855 | INFO | 127.0.0.1 - - [15/Apr/2025 00:49:56] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:49:56,861 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 0, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:49:56,877 | INFO | Response from predict: {'cvss_score': 7.68}
+2025-04-15 00:49:56,878 | INFO | 127.0.0.1 - - [15/Apr/2025 00:49:56] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:54:34,979 | INFO | 127.0.0.1 - - [15/Apr/2025 00:54:34] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:54:34,986 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:54:34,998 | INFO | Response from predict: {'cvss_score': 6.59}
+2025-04-15 00:54:34,999 | INFO | 127.0.0.1 - - [15/Apr/2025 00:54:34] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:10,802 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:10] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:10,809 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:10,837 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:10,838 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:10] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:14,069 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:14,082 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:14,083 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:14] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:14,801 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:14,815 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:14,816 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:14] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:14,970 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:14,986 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:14,987 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:14] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:15,147 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:15,155 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:15,156 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:15] "POST /api/predict HTTP/1.1" 200 -
+2025-04-15 00:58:15,721 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 0, 'impact_availability': 0, 'impact_confidentiality': 2, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-15 00:58:15,731 | INFO | Response from predict: {'cvss_score': 4.89}
+2025-04-15 00:58:15,732 | INFO | 127.0.0.1 - - [15/Apr/2025 00:58:15] "POST /api/predict HTTP/1.1" 200 -
