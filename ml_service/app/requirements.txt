@@ -1,7 +1,5 @@
 flask
 gunicorn
 pandas
-torch
 scikit-learn
-numpy
 pydantic

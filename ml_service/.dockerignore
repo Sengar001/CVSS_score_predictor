@@ -1,0 +1,17 @@
+
+# Exclude virtual environment folder
+venv/
+
+# Exclude dataset files (e.g., large CSVs, images)
+dataset/
+
+# Exclude log files
+*.log
+
+# Exclude Python cache files
+__pycache__/
+*.pyc
+
+# Exclude other unnecessary files
+*.bak
+*.tmp
