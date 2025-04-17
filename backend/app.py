@@ -19,7 +19,7 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
-ML_SERVICE_URL = "http://localhost:8000"  # Update if using Docker/k8s
+ML_SERVICE_URL = "http://cvss-ml-service:8000" # Update if using Docker/k8s
 
 def log_request(endpoint, payload):
     logging.info(f"Calling {endpoint} with payload: {payload}")
@@ -87,4 +87,5 @@ def reload_model():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+

@@ -1,5 +1,5 @@
 // src/services/api.js
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'http://cvss-backend:5000/api';
 
 export const predictCVSS = async (data) => {
   const response = await fetch(`${API_BASE}/predict`, {
