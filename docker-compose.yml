@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  mlservice:
+    build:
+      context: ./ml_service/app
+    container_name: cvss-mlservice
+    ports:
+      - "8000:8000"
+    networks:
+      - cvss-net
+
+  backend:
+    build:
+      context: ./backend
+    container_name: cvss-backend1
+    ports:
+      - "5000:5000"
+    environment:
+      - ML_SERVICE_URL=http://mlservice:8000
+    networks:
+      - cvss-net
+    depends_on:
+      - mlservice
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: cvss-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:5000/api
+    networks:
+      - cvss-net
+    depends_on:
+      - backend
+
+# 👇 This is critical
+networks:
+  cvss-net:
+    driver: bridge

@@ -1,0 +1,47 @@
+2025-04-18 16:22:28,463 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.236.179:5000
+2025-04-18 16:22:28,463 | INFO | [33mPress CTRL+C to quit[0m
+2025-04-18 16:22:28,463 | INFO |  * Restarting with stat
+2025-04-18 16:22:28,587 | WARNING |  * Debugger is active!
+2025-04-18 16:22:28,647 | INFO |  * Debugger PIN: 125-290-673
+2025-04-18 16:22:55,188 | INFO | 127.0.0.1 - - [18/Apr/2025 16:22:55] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:22:55,192 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-18 16:22:55,456 | ERROR | Error in predict: HTTPConnectionPool(host='cvss-ml-service', port=8000): Max retries exceeded with url: /predict (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7926e8e8df10>: Failed to resolve 'cvss-ml-service' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-18 16:22:55,457 | INFO | 127.0.0.1 - - [18/Apr/2025 16:22:55] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-18 16:23:06,249 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:06] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:23:06,253 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-18 16:23:06,326 | ERROR | Error in predict: HTTPConnectionPool(host='cvss-ml-service', port=8000): Max retries exceeded with url: /predict (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7926e8ede890>: Failed to resolve 'cvss-ml-service' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-18 16:23:06,327 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:06] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-18 16:23:23,935 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:23] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:23:23,939 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-18 16:23:23,994 | ERROR | Error in predict: HTTPConnectionPool(host='cvss-ml-service', port=8000): Max retries exceeded with url: /predict (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7926e8e24790>: Failed to resolve 'cvss-ml-service' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-18 16:23:23,995 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:23] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-18 16:23:38,851 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:38] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:23:38,855 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 1, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 1, 'access_vector_NETWORK': 0, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 0, 'access_authentication_SINGLE': 1}
+2025-04-18 16:23:38,970 | ERROR | Error in predict: HTTPConnectionPool(host='cvss-ml-service', port=8000): Max retries exceeded with url: /predict (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7926e8ebbc90>: Failed to resolve 'cvss-ml-service' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-18 16:23:38,971 | INFO | 127.0.0.1 - - [18/Apr/2025 16:23:38] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-18 16:24:07,980 | INFO | Calling predict with payload: {'summary': 'MidiCart stores the midicart.mdb database file under the Web document root, which allows remote attackers to steal sensitive information by directly requesting the database.', 'access_complexity': 1, 'impact_availability': 1, 'impact_confidentiality': 1, 'impact_integrity': 0, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-18 16:24:08,035 | ERROR | Error in predict: HTTPConnectionPool(host='cvss-ml-service', port=8000): Max retries exceeded with url: /predict (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7926e8ccd9d0>: Failed to resolve 'cvss-ml-service' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-18 16:24:08,036 | INFO | 127.0.0.1 - - [18/Apr/2025 16:24:08] "[35m[1mPOST /api/predict HTTP/1.1[0m" 500 -
+2025-04-18 16:24:46,099 | INFO |  * Detected change in '/home/abhishek-singh-sengar/Downloads/CVSS_score_predictor/backend/app.py', reloading
+2025-04-18 16:24:46,127 | INFO |  * Restarting with stat
+2025-04-18 16:24:46,261 | WARNING |  * Debugger is active!
+2025-04-18 16:24:46,262 | INFO |  * Debugger PIN: 125-290-673
+2025-04-18 16:24:57,652 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.236.179:5000
+2025-04-18 16:24:57,653 | INFO | [33mPress CTRL+C to quit[0m
+2025-04-18 16:24:57,653 | INFO |  * Restarting with stat
+2025-04-18 16:24:57,778 | WARNING |  * Debugger is active!
+2025-04-18 16:24:57,779 | INFO |  * Debugger PIN: 125-290-673
+2025-04-18 16:25:03,221 | INFO | 127.0.0.1 - - [18/Apr/2025 16:25:03] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:25:03,225 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 2, 'impact_availability': 0, 'impact_confidentiality': 1, 'impact_integrity': 1, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 1, 'access_vector_NETWORK': 0, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 0, 'access_authentication_SINGLE': 1}
+2025-04-18 16:25:03,241 | INFO | Response from predict: {'cvss_score': 3.09}
+2025-04-18 16:25:03,242 | INFO | 127.0.0.1 - - [18/Apr/2025 16:25:03] "POST /api/predict HTTP/1.1" 200 -
+2025-04-18 16:25:11,883 | INFO | 127.0.0.1 - - [18/Apr/2025 16:25:11] "OPTIONS /api/predict HTTP/1.1" 200 -
+2025-04-18 16:25:11,886 | INFO | Calling predict with payload: {'summary': 'data.summary', 'access_complexity': 1, 'impact_availability': 2, 'impact_confidentiality': 2, 'impact_integrity': 2, 'access_vector_ADJACENT_NETWORK': 0, 'access_vector_LOCAL': 0, 'access_vector_NETWORK': 1, 'access_authentication_MULTIPLE': 0, 'access_authentication_NONE': 1, 'access_authentication_SINGLE': 0}
+2025-04-18 16:25:11,900 | INFO | Response from predict: {'cvss_score': 6.83}
+2025-04-18 16:25:11,901 | INFO | 127.0.0.1 - - [18/Apr/2025 16:25:11] "POST /api/predict HTTP/1.1" 200 -

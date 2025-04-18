@@ -19,7 +19,7 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
-ML_SERVICE_URL = "http://cvss-ml-service:8000" # Update if using Docker/k8s
+ML_SERVICE_URL = "http://cvss-mlservice:8000" # Update if using Docker/k8s
 
 def log_request(endpoint, payload):
     logging.info(f"Calling {endpoint} with payload: {payload}")
