@@ -7,9 +7,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Install required polyfills and vite plugin
-RUN npm install crypto-browserify stream-browserify assert buffer process vite-plugin-node-polyfills
-
 # Copy the rest of the application
 COPY . .
 
@@ -18,7 +15,14 @@ RUN npm run build
 
 # Stage 2: Serve the app using Nginx
 FROM nginx:alpine
+
+# Remove default nginx config and replace with custom config
+RUN rm -rf /etc/nginx/conf.d/*
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy built assets from build stage
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port and run nginx
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

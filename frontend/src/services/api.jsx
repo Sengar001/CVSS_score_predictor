@@ -1,9 +1,9 @@
 // src/services/api.js
-// const API_BASE = '/api';
+const API_BASE = '/api';
 
-const API_BASE = import.meta.env.MODE === 'development' 
-  ? 'http://cvss-backend:5000/api' 
-  : '/api';
+// const API_BASE = import.meta.env.MODE === 'development' 
+//   ? 'http://cvss-backend1:5000/api' 
+//   : '/api';
 
 export const predictCVSS = async (data) => {
   const response = await fetch(`${API_BASE}/predict`, {

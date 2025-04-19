@@ -34,7 +34,6 @@ services:
     depends_on:
       - backend
 
-# 👇 This is critical
 networks:
   cvss-net:
     driver: bridge
