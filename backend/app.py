@@ -4,9 +4,23 @@ import logging
 from datetime import datetime
 from flask_cors import CORS 
 import os
+import logging
+import logstash
+import socket
+
 
 app = Flask(__name__)
 CORS(app)
+
+host = 'logstash'  # container name of logstash service from docker-compose
+
+logger = logging.getLogger('python-logstash-logger')
+logger.setLevel(logging.INFO)
+logger.addHandler(logstash.TCPLogstashHandler(host, 5044, version=1))
+
+# Add this to test the logger
+logger.info('Log from Python backend', extra={'app': 'cvss-backend'})
+
 
 # === Setup Logging ===
 log_dir = "logs"
