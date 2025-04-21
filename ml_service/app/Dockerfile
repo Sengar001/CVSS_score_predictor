@@ -1,21 +1,21 @@
-# Use prebuilt PyTorch image to avoid downloading torch, numpy, etc.
-FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+FROM python:3.10-slim
 
-# Set working directory inside the container
 WORKDIR /app
 
-# Copy only the requirements file first to leverage Docker caching
+# Install system dependencies for torch + pip
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libopenblas-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install only CPU version of torch
 COPY requirements.txt .
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Install only necessary Python packages (faster with no-cache)
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-# Copy rest of the application files
 COPY . .
 
-# Expose the port your app runs on
 EXPOSE 8000
 
-# Start the service using Gunicorn (adjust main:app if needed)
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["python", "main.py"]
