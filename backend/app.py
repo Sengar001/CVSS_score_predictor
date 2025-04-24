@@ -2,27 +2,22 @@ from flask import Flask, request, jsonify
 import requests
 import logging
 from datetime import datetime
-from flask_cors import CORS 
+from flask_cors import CORS
 import os
-import logging
 import logstash
 import socket
-
 
 app = Flask(__name__)
 CORS(app)
 
-host = 'logstash'  # container name of logstash service from docker-compose
-
+# Logstash setup (send logs to Logstash via TCP)
+logstash_host = 'logstash'  # Docker container name for Logstash
+logstash_port = 5044
 logger = logging.getLogger('python-logstash-logger')
 logger.setLevel(logging.INFO)
-logger.addHandler(logstash.TCPLogstashHandler(host, 5044, version=1))
+logger.addHandler(logstash.TCPLogstashHandler(logstash_host, logstash_port, version=1))
 
-# Add this to test the logger
-logger.info('Log from Python backend', extra={'app': 'cvss-backend'})
-
-
-# === Setup Logging ===
+# === Logging setup ===
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, f"backend_{datetime.now().strftime('%Y-%m-%d')}.log")
@@ -33,15 +28,18 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s"
 )
 
-ML_SERVICE_URL = "http://cvss-mlservice:8000" # Update if using Docker/k8s
+ML_SERVICE_URL = "http://cvss-mlservice:8000"  # Update if using Docker/k8s
 
 def log_request(endpoint, payload):
+    logger.info(f"Calling {endpoint} with payload: {payload}")
     logging.info(f"Calling {endpoint} with payload: {payload}")
 
 def log_response(endpoint, response):
+    logger.info(f"Response from {endpoint}: {response}")
     logging.info(f"Response from {endpoint}: {response}")
 
 def log_error(endpoint, error):
+    logger.error(f"Error in {endpoint}: {error}")
     logging.error(f"Error in {endpoint}: {error}")
 
 @app.route("/api/predict", methods=["POST"])
@@ -102,4 +100,3 @@ def reload_model():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-
