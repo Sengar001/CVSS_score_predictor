@@ -1,0 +1,27 @@
+---
+# - name: Install Docker
+#   apt:
+#     name: docker.io
+#     state: present
+#     update_cache: true
+
+# - name: Install Docker Compose
+#   apt:
+#     name: docker-compose
+#     state: present
+
+# - name: Ensure docker service is running
+#   service:
+#     name: docker
+#     state: started
+#     enabled: true
+
+# - name: Pull all Docker Compose images
+#   command: docker-compose pull
+#   args:
+#     chdir: "{{ playbook_dir }}/.."
+
+- name: Start all Docker Compose services
+  command: docker-compose up -d
+  args:
+    chdir: "{{ playbook_dir }}/.."
