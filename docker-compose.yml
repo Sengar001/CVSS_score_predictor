@@ -1,7 +1,8 @@
 services:
   mlservice:
-    build:
-      context: ./ml_service/app
+    # build:
+    #   context: ./ml_service/app
+    image: sengar001/cvss-mlservice:latest
     container_name: cvss-mlservice
     ports:
       - "8000:8000"
@@ -9,8 +10,9 @@ services:
       - cvss-net
 
   backend:
-    build:
-      context: ./backend
+    # build:
+    #   context: ./backend
+    image: sengar001/cvss-backend:latest
     container_name: cvss-backend1
     ports:
       - "5000:5000"
@@ -22,8 +24,9 @@ services:
       - mlservice
 
   frontend:
-    build:
-      context: ./frontend
+    # build:
+    #   context: ./frontend
+    image: sengar001/cvss-frontend:latest
     container_name: cvss-frontend
     ports:
       - "3000:80"
