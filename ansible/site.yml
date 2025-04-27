@@ -1,6 +1,8 @@
 - name: Deploy CVSS Stack
   hosts: all
   become: true
+  vars_files:
+    - secrets.yml
   roles:
     - { role: docker, tags: ["docker"] }
     - { role: k8s, tags: ["k8s"] }
