@@ -51,7 +51,7 @@ pipeline {
                 script {
                     withCredentials([file(credentialsId: 'VaultPasswordFile', variable: 'VAULT_PASS_FILE')]) {
                         sh """
-                            ansible-playbook -i ansible/inventory/hosts.yml ansible/site.yml --vault-password-file $VAULT_PASS_FILE --tags docker
+                            ansible-playbook -vvv -i ansible/inventory/hosts.yml ansible/site.yml --vault-password-file $VAULT_PASS_FILE --tags docker
                         """
                     }
                 }

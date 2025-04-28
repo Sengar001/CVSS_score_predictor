@@ -1,6 +1,5 @@
 - name: Deploy CVSS Stack
   hosts: all
-  gather_facts: no
   become: true
   vars_files:
     - secrets.yml
