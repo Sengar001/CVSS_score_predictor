@@ -3,14 +3,10 @@ kind: Service
 metadata:
   name: logstash
 spec:
-  type: NodePort
   selector:
     app: logstash
   ports:
     - protocol: TCP
       port: 5044
       targetPort: 5044
-      nodePort: 30544
-    - protocol: TCP
-      port: 9600
-      targetPort: 9600
+  type: ClusterIP

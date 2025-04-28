@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cvss-backend
+  name: cvss-backend1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cvss-backend
+      app: cvss-backend1
   template:
     metadata:
       labels:
-        app: cvss-backend
+        app: cvss-backend1
     spec:
       containers:
-        - name: cvss-backend
+        - name: cvss-backend1
           image: sengar001/cvss-backend:latest
           ports:
             - containerPort: 5000
+          env:
+            - name: ML_SERVICE_URL
+              value: http://cvss-mlservice:8000

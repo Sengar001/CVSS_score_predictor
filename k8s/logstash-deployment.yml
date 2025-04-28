@@ -17,4 +17,10 @@ spec:
           image: docker.elastic.co/logstash/logstash:8.12.0
           ports:
             - containerPort: 5044
-            - containerPort: 9600
+          volumeMounts:
+            - name: logstash-config
+              mountPath: /usr/share/logstash/pipeline/
+      volumes:
+        - name: logstash-config
+          configMap:
+            name: logstash-config
