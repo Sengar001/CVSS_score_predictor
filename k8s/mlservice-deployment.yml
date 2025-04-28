@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cvss-mlservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvss-mlservice
+  template:
+    metadata:
+      labels:
+        app: cvss-mlservice
+    spec:
+      containers:
+        - name: cvss-mlservice
+          image: sengar001/cvss-mlservice:latest
+          ports:
+            - containerPort: 8000

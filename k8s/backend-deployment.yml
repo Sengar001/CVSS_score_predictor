@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cvss-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvss-backend
+  template:
+    metadata:
+      labels:
+        app: cvss-backend
+    spec:
+      containers:
+        - name: cvss-backend
+          image: sengar001/cvss-backend:latest
+          ports:
+            - containerPort: 5000

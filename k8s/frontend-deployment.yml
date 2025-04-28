@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cvss-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvss-frontend
+  template:
+    metadata:
+      labels:
+        app: cvss-frontend
+    spec:
+      containers:
+        - name: cvss-frontend
+          image: sengar001/cvss-frontend:latest
+          ports:
+            - containerPort: 80
