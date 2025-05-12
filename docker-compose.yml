@@ -6,6 +6,8 @@ services:
     container_name: cvss-mlservice
     ports:
       - "8000:8000"
+    volumes:
+      - ml_feedback:/app/dataset
     networks:
       - cvss-net
 
@@ -84,3 +86,4 @@ networks:
 volumes:
   esdata:
   kibanadata:
+  ml_feedback:
