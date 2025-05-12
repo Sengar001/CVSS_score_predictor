@@ -17,3 +17,10 @@ spec:
           image: sengar001/cvss-mlservice:latest
           ports:
             - containerPort: 8000
+          volumeMounts:
+            - name: feedback-storage
+              mountPath: /app/dataset
+      volumes:
+        - name: feedback-storage
+          persistentVolumeClaim:
+            claimName: feedback-pvc
