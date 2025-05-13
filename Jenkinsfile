@@ -31,13 +31,10 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'DockerHubCred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     script {
-                        // Login to Docker Hub
                         def loginStatus = sh(script: 'echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin', returnStatus: true)
                         if (loginStatus != 0) {
                             error("Docker login failed. Check credentials and try again.")
                         }
-
-                        // Push images to Docker Hub
                         sh "docker push $DOCKER_USER/cvss-backend:latest"
                         sh "docker push $DOCKER_USER/cvss-frontend:latest"
                         sh "docker push $DOCKER_USER/cvss-mlservice:latest"
@@ -46,13 +43,26 @@ pipeline {
             }
         }
 
-        stage('Run Ansible Playbook') {
+        // stage('Run Ansible Playbook') {
+        //     steps {
+        //         script {
+        //             withCredentials([file(credentialsId: 'VaultPasswordFile', variable: 'VAULT_PASS_FILE')]) {
+        //                 sh """
+        //                     ansible-playbook -vvv -i ansible/inventory/hosts.yml ansible/site.yml --vault-password-file $VAULT_PASS_FILE --tags docker --connection=local
+        //                 """
+        //             }
+        //         }
+        //     }
+        // }
+
+        stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    withCredentials([file(credentialsId: 'VaultPasswordFile', variable: 'VAULT_PASS_FILE')]) {
-                        sh """
-                            ansible-playbook -vvv -i ansible/inventory/hosts.yml ansible/site.yml --vault-password-file $VAULT_PASS_FILE --tags docker --connection=local
-                        """
+                    withCredentials([file(credentialsId: 'KubeConfigFile', variable: 'KUBECONFIG_FILE')]) {
+                        sh '''
+                            export KUBECONFIG=$KUBECONFIG_FILE
+                            kubectl apply -f k8s/
+                        '''
                     }
                 }
             }
