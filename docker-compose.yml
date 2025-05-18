@@ -8,6 +8,7 @@ services:
       - "8000:8000"
     volumes:
       - ml_feedback:/app/dataset
+      - ml_model:/app/model
     networks:
       - cvss-net
 
@@ -87,3 +88,4 @@ volumes:
   esdata:
   kibanadata:
   ml_feedback:
+  ml_model:
