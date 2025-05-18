@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import os
 import json
+import threading
 
 from model import MultiInputModel
 from utils import text_to_sequence, load_vocab_scaler
@@ -89,7 +90,9 @@ def receive_feedback():
             json.dump([], f)
 
         # Retrain model on updated CSV
-        retrain_from_feedback(data_csv_path)
+        # retrain_from_feedback(data_csv_path)
+        thread = threading.Thread(target=retrain_task)
+        thread.start()
 
         return jsonify({"status": "500 feedback received. Model retrained."})
 
@@ -100,12 +103,16 @@ def reload_model():
     load_model()
     return jsonify({"status": "Model reloaded"})
 
+def retrain_task():
+    retrain_from_feedback("dataset/cve111.csv")
 
 @app.route("/retrain", methods=["POST"])
 def retrain_model():
-    retrain_from_feedback("dataset/cve111.csv")
+    # retrain_from_feedback("dataset/cve111.csv")
+    thread = threading.Thread(target=retrain_task)
+    thread.start()
 
-    return jsonify({"status": "500 feedback received. Model retrained."})
+    return jsonify({"status": "500 feedback received. Model retraining started."})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=False)
