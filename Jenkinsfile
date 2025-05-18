@@ -55,17 +55,17 @@ pipeline {
         //     }
         // }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    withCredentials([file(credentialsId: 'KubeConfigFile', variable: 'KUBECONFIG_FILE')]) {
-                        sh '''
-                            export KUBECONFIG=$KUBECONFIG_FILE
-                            kubectl apply -f k8s/
-                        '''
-                    }
-                }
-            }
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         script {
+        //             withCredentials([file(credentialsId: 'KubeConfigFile', variable: 'KUBECONFIG_FILE')]) {
+        //                 sh '''
+        //                     export KUBECONFIG=$KUBECONFIG_FILE
+        //                     kubectl apply -f k8s/
+        //                 '''
+        //             }
+        //         }
+        //     }
         }
     }
 }

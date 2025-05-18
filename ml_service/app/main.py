@@ -5,8 +5,8 @@ import pandas as pd
 import os
 import json
 
-from model.model import MultiInputModel
-from model.utils import text_to_sequence, load_vocab_scaler
+from model import MultiInputModel
+from utils import text_to_sequence, load_vocab_scaler
 from retrain_model import retrain_from_feedback
 
 app = Flask(__name__)
@@ -48,25 +48,20 @@ def receive_feedback():
     feedback_buffer_path = "dataset/feedback.json"
     data_csv_path = "dataset/cve111.csv"
 
-    # Load buffer
     if os.path.exists(feedback_buffer_path):
         with open(feedback_buffer_path, "r") as f:
             feedback_buffer = json.load(f)
     else:
         feedback_buffer = []
 
-    # Add new feedback
     feedback_buffer.append(feedback)
 
-    # Save back to buffer file
     with open(feedback_buffer_path, "w") as f:
         json.dump(feedback_buffer, f)
 
-    # If we have 500+ feedbacks, update CSV and retrain
     if len(feedback_buffer) >= 500:
         print("500 feedback entries reached. Appending to CSV and retraining.")
 
-        # Convert buffer to DataFrame
         feedback_df = pd.DataFrame([{
             "summary": fb["summary"],
             "access_complexity": fb["access_complexity"],
@@ -80,7 +75,6 @@ def receive_feedback():
             "cvss": fb["cvss"]
         } for fb in feedback_buffer])
 
-        # Append to existing CSV
         if os.path.exists(data_csv_path):
             existing_df = pd.read_csv(data_csv_path)
             updated_df = pd.concat([existing_df, feedback_df], ignore_index=True)

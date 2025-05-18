@@ -9,8 +9,8 @@ import pandas as pd
 import json
 from collections import defaultdict
 
-from model.model import MultiInputModel
-from model.utils import preprocess_dataframe, save_vocab_scaler
+from model import MultiInputModel
+from utils import preprocess_dataframe, save_vocab_scaler
 
 class MultiInputDataset(Dataset):
     def __init__(self, text_data, struct_data, labels):
