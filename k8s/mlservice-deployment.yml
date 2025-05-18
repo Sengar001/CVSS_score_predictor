@@ -25,12 +25,12 @@ spec:
           volumeMounts:
             - name: feedback-storage
               mountPath: /app/dataset
-            - name: model-storage
-              mountPath: /app/model
+            # - name: model-storage
+            #   mountPath: /app/model
       volumes:
         - name: feedback-storage
           persistentVolumeClaim:
             claimName: feedback-pvc
-        - name: model-storage
-          persistentVolumeClaim:
-            claimName: model-pvc
+        # - name: model-storage
+        #   persistentVolumeClaim:
+        #     claimName: model-pvc
