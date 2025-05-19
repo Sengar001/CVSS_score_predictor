@@ -20,3 +20,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  volumeName: model-pv
+  storageClassName: ""
