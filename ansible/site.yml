@@ -7,3 +7,4 @@
     ansible_become_pass: "{{ ansible_become_password }}"
   roles:
     - { role: docker, tags: ["docker"] }
+    - { role: k8, tags: ["k8"] }

@@ -1,0 +1,6 @@
+- name: Apply Kubernetes manifests
+  command: kubectl apply -f k8s/
+  args:
+    chdir: "{{ playbook_dir }}/.."
+  environment:
+    KUBECONFIG: /home/abhishek-singh-sengar/kubeconfig-embedded.yaml
