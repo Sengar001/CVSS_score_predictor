@@ -55,17 +55,29 @@ pipeline {
         //     }
         // }
 
-        stage('Deploy to Kubernetes') {
+        stage('Run Ansible Playbook') {
             steps {
                 script {
-                    withCredentials([file(credentialsId: 'KubeConfigFile', variable: 'KUBECONFIG_FILE')]) {
-                        sh '''
-                            export KUBECONFIG=$KUBECONFIG_FILE
-                            kubectl apply -f k8s/
-                        '''
+                    withCredentials([file(credentialsId: 'VaultPasswordFile', variable: 'VAULT_PASS_FILE')]) {
+                        sh """
+                            ansible-playbook -vvv -i ansible/inventory/hosts.yml ansible/site.yml --vault-password-file $VAULT_PASS_FILE --tags k8 --connection=local
+                        """
                     }
                 }
             }
         }
+
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         script {
+        //             withCredentials([file(credentialsId: 'KubeConfigFile', variable: 'KUBECONFIG_FILE')]) {
+        //                 sh '''
+        //                     export KUBECONFIG=$KUBECONFIG_FILE
+        //                     kubectl apply -f k8s/
+        //                 '''
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
