@@ -17,6 +17,11 @@ spec:
           image: sengar001/cvss-frontend:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
           env:
             - name: BACKEND_URL
               value: http://cvss-backend1:5000/api

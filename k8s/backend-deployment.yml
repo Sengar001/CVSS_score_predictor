@@ -17,6 +17,11 @@ spec:
           image: sengar001/cvss-backend:latest
           ports:
             - containerPort: 5000
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
           env:
             - name: ML_SERVICE_URL
               value: http://cvss-mlservice:8000

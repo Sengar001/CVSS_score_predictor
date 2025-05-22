@@ -33,7 +33,6 @@ def save_vocab_scaler(vocab, scaler):
     with open("model/scaler.pkl", "wb") as f:
         pickle.dump(scaler, f)
 
-# Categorical & text preprocessing for structured dataset
 def hot_encode(df, col):
     unique_vals = df[col].unique()
     mapping = {val: i for i, val in enumerate(unique_vals)}
@@ -41,21 +40,17 @@ def hot_encode(df, col):
     return df
 
 def preprocess_dataframe(df):
-    # One-hot encode specific columns if they exist
     if 'access_vector' in df.columns or 'access_authentication' in df.columns:
         df = pd.get_dummies(df, columns=['access_vector', 'access_authentication'], drop_first=False)
 
-    # Label encode object columns except 'summary'
     for col in df.columns:
         if df[col].dtype == 'object' and col != 'summary':
             df = hot_encode(df, col)
 
-    # Convert boolean columns to integers
     for col in df.columns:
         if df[col].dtype == 'bool':
             df[col] = df[col].astype(int)
 
-    # Clean text
     if 'summary' in df.columns:
         df['summary'] = df['summary'].astype(str).apply(preprocess_text)
 

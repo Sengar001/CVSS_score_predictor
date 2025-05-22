@@ -10,14 +10,12 @@ import socket
 app = Flask(__name__)
 CORS(app)
 
-# Logstash setup (send logs to Logstash via TCP)
-logstash_host = 'logstash'  # Docker container name for Logstash
+logstash_host = 'logstash' 
 logstash_port = 5044
 logger = logging.getLogger('python-logstash-logger')
 logger.setLevel(logging.INFO)
 logger.addHandler(logstash.TCPLogstashHandler(logstash_host, logstash_port, version=1))
 
-# === Logging setup ===
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, f"backend_{datetime.now().strftime('%Y-%m-%d')}.log")

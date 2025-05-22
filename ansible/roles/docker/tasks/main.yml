@@ -10,12 +10,6 @@
 #     name: docker-compose
 #     state: present
 
-# - name: Ensure docker service is running
-#   service:
-#     name: docker
-#     state: started
-#     enabled: true
-
 - name: Start all Docker Compose services
   command: docker-compose up -d
   args:
